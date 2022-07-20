@@ -1,0 +1,3 @@
+Escreva um programa que lˆe um n´umero inteiro do teclado e imprime
+”SIM”se o n´umero for par e maior do que 10, ou for ´ımpar e menor
+do que 50. Caso contr´ario o programa deve imprimir ”NAO”.

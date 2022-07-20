@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1657140542 source:d:\usuario\desktop\connect\algarismos e estruturas de dados\lista 02\exercicio_10\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+

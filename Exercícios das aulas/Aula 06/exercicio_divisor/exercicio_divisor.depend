@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1657303888 source:d:\usuario\desktop\connect\algarismos e estruturas de dados\aula 05\exercicio_divisor\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+
