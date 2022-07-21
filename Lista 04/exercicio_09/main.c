@@ -22,8 +22,6 @@ int main()
         }
     }
 
-
-
     for(int j = 0; j < acumuladora; j++)
     {
         printf("VetorB[%d]= %d. \n", j, vetorB[j]);
