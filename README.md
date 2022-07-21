@@ -7,5 +7,7 @@ Algorithms and Data Structures Course in Biopark.
 
  -List 02 is about if, and, or & switch;
  
- -List 03 is about while, do-while and for. 
+ -List 03 is about while, do-while and for;
+ 
+ -List 04 is about arrays.
 
