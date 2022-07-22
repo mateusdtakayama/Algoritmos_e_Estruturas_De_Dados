@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1658518824 source:d:\usuario\desktop\connect\algoritmos e estruturas de dados\pascoa\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+
+1658518824 source:d:\usuario\desktop\connect\algoritmos e estruturas de dados\exercícios das aulas\pascoa\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+
