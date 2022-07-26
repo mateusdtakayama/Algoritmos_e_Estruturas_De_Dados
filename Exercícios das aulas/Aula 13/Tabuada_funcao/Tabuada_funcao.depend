@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1658857054 source:d:\usuario\desktop\connect\algoritmos e estruturas de dados\exercícios das aulas\aula 13\tabuada_funcao\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+
