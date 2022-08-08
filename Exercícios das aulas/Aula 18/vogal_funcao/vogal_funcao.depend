@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1659465090 source:d:\usuario\desktop\connect\algoritmos e estruturas de dados\exercícios das aulas\aula 18\vogal_funcao\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

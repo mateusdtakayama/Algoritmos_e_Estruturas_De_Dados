@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1658950346 source:d:\usuario\desktop\connect\algoritmos e estruturas de dados\exercícios das aulas\aula 10,11,12\vetor_funcao\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+

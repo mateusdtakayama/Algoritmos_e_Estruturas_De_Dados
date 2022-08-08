@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1659631849 source:d:\usuario\desktop\connect\algoritmos e estruturas de dados\exercícios das aulas\aula 18\ascii_vetores\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+	<string.h>
+

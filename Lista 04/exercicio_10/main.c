@@ -9,7 +9,7 @@ int main()
     int j = 0;
     int i = 0;
 
-    //obtendo os dados do array
+    //obtendo os dados do vetor
     for(int i = 0; i < 10; i++)
     {
         printf("Insira o valor do vetor A [%d]: \n", i);

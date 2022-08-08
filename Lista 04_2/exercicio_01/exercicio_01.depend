@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1659122340 source:d:\usuario\desktop\connect\algoritmos e estruturas de dados\lista 05\exercicio_01\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+
