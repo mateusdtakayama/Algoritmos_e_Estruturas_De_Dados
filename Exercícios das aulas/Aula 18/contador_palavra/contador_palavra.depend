@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1660844625 source:d:\usuario\desktop\connect\algoritmos e estruturas de dados\exercícios das aulas\aula 18\contador_palavra\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+
