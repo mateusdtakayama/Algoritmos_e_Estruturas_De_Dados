@@ -9,11 +9,20 @@ struct poltrona{
     char nome[50];
 
 };
+
+void disponivel(int tam, struct poltrona cinema[tam][tam]);
+void reservadas(int tam, struct poltrona cinema[tam][tam]);
+int menu();
+void reservar(int tam, struct poltrona cinema[tam][tam], int letra, int fileira, int num);
+void comprar(int tam, struct poltrona cinema[tam][tam], int letra, int fileira, int num);
+void cancelar(int tam, struct poltrona cinema[tam][tam], int letra, int fileira, int num);
+
+
 int main()
 {
     setlocale(LC_ALL, "Portuguese");
 
-    int tam = 3, opcao, num, fileira;
+    int tam = 5, opcao, num, fileira;
     char letra;
 
     struct poltrona cinema[tam][tam];
@@ -27,45 +36,18 @@ int main()
 
 
     do{
-        printf("---------- Menu ---------- \n");
-        printf(" 1. Reservar poltrona. \n");
-        printf(" 2. Comprar poltrona. \n");
-        printf(" 3. Cancelar reserva. \n");
-        printf(" 4. Sair do programa. \n");
-        printf("-------------------------- \n");
-        printf(" Digite a opção desejada: ");
-        scanf("%d" , &opcao);
 
-        switch(opcao){
+
+        switch(menu()){
 
         case 1:
-            printf(" Poltronas disponíveis: \n");
-            disponivel(tam, cinema);
-            fflush(stdin);
-            printf(" Em qual fileira deseja reservar? \n");
-            scanf("%c", &letra);
-            fileira = letra - 97;
-            printf(" Qual o numero da poltrona? \n");
-            scanf("%d" , &num);
-
-            printf("%d", fileira);
-
-            printf("Reservando %c%d... \n", letra, num);
-
-            for(int i=0;i<tam;i++){
-                for(int j=0;j<tam;j++){
-                    if(i == fileira && j == num ){
-                        cinema[i][j].ocupado = 1;
-                    }
-                }
-            }
-            disponivel(tam, cinema);
+            reservar(tam, cinema, letra, fileira, num);
             break;
         case 2:
-            //disponiveis();
+            comprar(tam, cinema, letra, fileira, num);
             break;
         case 3:
-            //reservadas();
+            cancelar(tam, cinema, letra, fileira, num);
             break;
         case 4:
             opcao = 4;
@@ -101,10 +83,12 @@ void disponivel(int tam, struct poltrona cinema[tam][tam]){
     for(int i=0; i<tam;i++){
         for(int j=0; j<tam;j++){
 
-            if(cinema[i][j].ocupado == 0){
+            if(cinema[i][j].ocupado == 0){ // 0 = livre
                 printf(" %c%d " , caracter, j);
-            }else{
+            }else if(cinema[i][j].ocupado == 2){ //2 = comprada
                 printf("    ");
+            }else{
+                printf(" ** "); // 1 = reservada
             }
             if(j+1 == tam){
                     caracter++;
@@ -116,3 +100,115 @@ void disponivel(int tam, struct poltrona cinema[tam][tam]){
 
 }
 
+void reservadas(int tam, struct poltrona cinema[tam][tam]){
+    int caracter = 97;
+    for(int i=0; i<tam;i++){
+        for(int j=0; j<tam;j++){
+
+            if(cinema[i][j].ocupado == 0){
+                printf("     ");
+            }else if(cinema[i][j].ocupado == 2){
+                printf("     ");
+            }else{
+                printf(" %c%d ", caracter, j);
+            }
+            if(j+1 == tam){
+                    caracter++;
+            }
+
+        }
+        printf("\n");
+    }
+}
+
+int menu(){
+    int opcao;
+        printf("---------- Menu ---------- \n");
+        printf(" 1. Reservar poltrona. \n");
+        printf(" 2. Comprar poltrona. \n");
+        printf(" 3. Cancelar reserva. \n");
+        printf(" 4. Sair do programa. \n");
+        printf("-------------------------- \n");
+        printf("Digite a opção desejada: ");
+        scanf("%d" , &opcao);
+
+    return opcao;
+}
+
+void reservar(int tam, struct poltrona cinema[tam][tam], int letra, int fileira, int num){
+    printf("Poltronas disponíveis: \n");
+    disponivel(tam, cinema);
+    fflush(stdin);
+    printf("Em qual fileira deseja reservar? \n");
+    scanf("%c", &letra);
+    fileira = letra - 97;
+    printf("Qual o numero da poltrona? \n");
+    scanf("%d" , &num);
+
+    printf("Reservando %c%d... \n", letra, num);
+
+    for(int i=0;i<tam;i++){
+        for(int j=0;j<tam;j++){
+            if(i == fileira && j == num){
+                if(cinema[i][j].ocupado != 1 && cinema[i][j].ocupado != 2){
+                   cinema[i][j].ocupado = 1;
+                }else{
+                    printf("A poltrona inserida não está disponível! \n");
+                }
+
+            }
+        }
+    }
+}
+
+void comprar(int tam, struct poltrona cinema[tam][tam], int letra, int fileira, int num){
+    printf("Poltronas disponíveis: \n");
+    disponivel(tam, cinema);
+    fflush(stdin);
+    printf("Em qual fileira deseja comprar? \n");
+    scanf("%c", &letra);
+    fileira = letra - 97;
+    printf("Qual o numero da poltrona? \n");
+    scanf("%d" , &num);
+
+    printf("Comprando %c%d... \n", letra, num);
+
+    for(int i=0;i<tam;i++){
+        for(int j=0;j<tam;j++){
+            if(i == fileira && j == num ){
+                if(cinema[i][j].ocupado != 1 && cinema[i][j].ocupado != 2){
+                   cinema[i][j].ocupado = 2;
+                }else{
+                    printf("A poltrona inserida não está disponível! \n");
+                }
+            }
+        }
+    }
+}
+
+
+void cancelar(int tam, struct poltrona cinema[tam][tam], int letra, int fileira, int num){
+
+    printf("Poltronas reservadas: \n");
+    reservadas(tam, cinema);
+    fflush(stdin);
+    printf("Em qual fileira deseja cancelar a reserva? \n");
+    scanf("%c", &letra);
+    fileira = letra - 97;
+    printf("Qual o numero da poltrona? \n");
+    scanf("%d" , &num);
+
+    printf("Cancelando %c%d... \n", letra, num);
+
+    for(int i=0;i<tam;i++){
+        for(int j=0;j<tam;j++){
+            if(i == fileira && j == num ){
+                if(cinema[i][j].ocupado != 0 && cinema[i][j].ocupado != 2){
+                   cinema[i][j].ocupado = 0;
+                }else{
+                    printf("A poltrona inserida não foi reservada! \n");
+                }
+            }
+        }
+    }
+}
