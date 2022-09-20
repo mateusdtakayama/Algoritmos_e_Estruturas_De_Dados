@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1662750472 source:c:\users\tampe\desktop\connect\numeros_complexos_v2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"complexo.h"
+
+1662750076 c:\users\tampe\desktop\connect\numeros_complexos_v2\complexo.h
+

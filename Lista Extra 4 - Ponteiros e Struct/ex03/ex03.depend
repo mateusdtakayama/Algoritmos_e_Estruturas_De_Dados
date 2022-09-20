@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1663093664 source:d:\usuario\desktop\connect\algoritmos e estruturas de dados\lista extra 4 - ponteiros e struct\ex03\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<locale.h>
+
